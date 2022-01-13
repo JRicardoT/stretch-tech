@@ -63,12 +63,12 @@ const Form: React.FC<FormProps> = ({ submitSearch, randomSearch}) => {
     setIntolerances([]);
   }
 
-  const mapColumn = (eventHandler: (position: number) => void, state:any, stateArray:any, columnStyle:string) => {
+  const mapColumn = (eventHandler: (position: number) => void, state: boolean[], stateArray: {id: string, name: string}[], columnStyle:string) => {
     return(
       <div className={`check-column ${columnStyle}`}>
-        {stateArray.map((option:any, index:number) => {
+        {stateArray.map((option: {id: string, name: string}, index:number) => {
           return (
-            <div className="check-wrapper">
+            <div className="check-wrapper" key={option.id}>
               <input type="checkbox" id={option.id} checked={state[index]} onChange={(event) => {
                 handleChange(event);
                 eventHandler(index)
