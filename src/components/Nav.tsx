@@ -7,15 +7,15 @@ const Nav: React.FC = () => {
     <nav>
       <div className="nav-items left">
         <NavLink to="/" style={({ isActive }) => ({ 
-                borderBottom: isActive ? '3px solid white' : '',
-                paddingBottom: isActive ? '4px' : '',
-                fontWeight: isActive ? 'bold' : ''
+          borderBottom: isActive ? '3px solid white' : '',
+          paddingBottom: isActive ? '4px' : '',
+          fontWeight: isActive ? 'bold' : ''
         })}
         >Home</NavLink>
         <NavLink to="/about" style={({ isActive }) => ({ 
-                borderBottom: isActive ? '3px solid white' : '',
-                paddingBottom: isActive ? '4px' : '',
-                fontWeight: isActive ? 'bold' : ''
+          borderBottom: isActive ? '3px solid white' : '',
+          paddingBottom: isActive ? '4px' : '',
+          fontWeight: isActive ? 'bold' : ''
         })}
         >About</NavLink>
       </div>
