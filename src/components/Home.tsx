@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Form from "./Form";
 import ImageGrid from "./ImageGrid";
-import sampleData from '../sampleData';
 import ErrorModal from './ErrorModal';
 
 const Home: React.FC = () => {
@@ -19,7 +18,6 @@ const Home: React.FC = () => {
       const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?${cuisineTypeEndPoint}${intoleranceEndPoint}${dietRestrictionEndPoint}${typeEndPoint}&apiKey=${process.env.REACT_APP_API_KEY}`)
       const resJson = await res.json()
       .catch(error => setErrorState(error));
-      console.log(resJson)
       setRecipes(resJson.results)
     }
     fetchData();
@@ -45,7 +43,6 @@ const Home: React.FC = () => {
       const res = await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${process.env.REACT_APP_API_KEY}`)
       const resJson = await res.json()
       .catch(error => console.log(error));
-      console.log(resJson)
       setRecipes(resJson.recipes)
     }
     fetchData();
